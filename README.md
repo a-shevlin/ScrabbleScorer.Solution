@@ -68,7 +68,7 @@ This program was built using *[Microsoft .NET SDK 5.0.401](https://dotnet.micros
 
 [MIT](/LICENSE)
 
-Copyright (c) 2022 Alex Shevlin
+Copyright (c) 2022 Alex Shevlin, Zac Waggoner
 
 ### **Tests**
 
