@@ -55,7 +55,7 @@ namespace ScrabbleScorer.Tests
       Word newWord = new Word(test);
       newWord.SetInputArray();
       newWord.AddScore();
-      Assert.AreEqual(33, newWord.WordScore);
+      Assert.AreEqual(41, newWord.WordScore);
     }
   }
 }
