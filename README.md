@@ -79,14 +79,45 @@ Copyright (c) 2022 Alex Shevlin, Zac Waggoner
     <th>Expected Output</th>
   </tr>
   <tr>
-    <td>description</td>
+    <td>return input word to string</td>
     <td>
-    line one
+    string test = "test";
     <br>
-    line two
-    <br>
-    line three
+    Word newWord = new Word(test);
     </td>
-    <td>output</td>
+    <td>newWord.IsWord() is true</td>
+  </tr>
+    <tr>
+    <td>check for word in string</td>
+    <td>
+    string test = "";
+    <br>
+    Word newWord = new Word(test);
+    </td>
+    <td>newWord.IsWord() is false</td>
+  </tr>
+    <tr>
+    <td>return input word to an array</td>
+    <td>
+    string test = "test"
+    <br>
+    Word newWord = new Word(test);
+    <br>
+    newWord.SetInputArray();
+    </td>
+    <td>newWord.InputArray === {'t', 'e', 's', 't'}</td>
+  </tr>
+    <tr>
+    <td>return score based on letter</td>
+    <td>
+    string test = "test";
+    <br>
+    Word newWord = new Word(test);
+    <br>
+    newWord.SetInputArray();
+    <br>
+    newWord.AddScore();
+    </td>
+    <td>newWord.WordScore === 4</td>
   </tr>
 </table>
