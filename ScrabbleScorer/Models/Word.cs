@@ -57,6 +57,7 @@ namespace ScrabbleScorer
       string one = "aeioulnrst";
       string two = "dg";
       string three = "bcmp";
+      string four = "fhvwy";
       string five = "k";
       string eight = "jx";
       string ten = "qz";
@@ -73,6 +74,10 @@ namespace ScrabbleScorer
         else if (three.Contains(letter))
         {
           WordScore += 3;
+        }
+        else if (four.Contains(letter))
+        {
+          WordScore += 4;
         }
         else if (five.Contains(letter))
         {
