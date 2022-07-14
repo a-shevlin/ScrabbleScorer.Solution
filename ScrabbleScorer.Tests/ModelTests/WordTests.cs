@@ -32,11 +32,30 @@ namespace ScrabbleScorer.Tests
       char[] testArray = {'t', 'e', 's', 't'};
       Word newWord = new Word(test);
       newWord.SetInputArray();
-      Console.WriteLine(newWord.InputArray);
       for (int i = 0; i < test.Length; i ++) //compares inside each
       {
       Assert.AreEqual(testArray[i], newWord.InputArray[i]);
       }
+    }
+
+    [TestMethod]
+    public void AddScore_ReturnsScoreBasedOnLetter_Int()
+    {
+      string test = "test";
+      Word newWord = new Word(test);
+      newWord.SetInputArray();
+      newWord.AddScore();
+      Assert.AreEqual(4, newWord.WordScore);
+    }
+
+    [TestMethod]
+    public void AddScore_ReturnsLargerScoreBasedOnLetter_Int()
+    {
+      string test = "Oxyphenbutazone";
+      Word newWord = new Word(test);
+      newWord.SetInputArray();
+      newWord.AddScore();
+      Assert.AreEqual(33, newWord.WordScore);
     }
   }
 }
