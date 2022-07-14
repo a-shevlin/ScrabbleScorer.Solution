@@ -6,7 +6,6 @@ namespace ScrabbleScorer
   {
     public static void Main()
     {
-      Console.WriteLine(ClassName.Method("Behavior"));
     }
   }
 }
