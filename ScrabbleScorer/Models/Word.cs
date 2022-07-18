@@ -11,12 +11,9 @@
 
 //Further Exploration
 
-
-
-
 using System;
 
-namespace ScrabbleScorer
+namespace ScrabbleScorer.Model
 {
   public class Word
   {
@@ -24,11 +21,28 @@ namespace ScrabbleScorer
     public char[] InputArray { get; set;}
     public int WordScore { get; set; }
     // properties, constructors, methods, etc. go here
-    public Word(string input)
+    // public Word(string input)
+    // {
+    //   char[] arrayed = new char[input.Length];
+    //   Input = input.ToLower();
+    //   InputArray = arrayed;
+    //   WordScore = 0;
+    // }
+
+    public void Generate()
     {
-      char[] arrayed = new char[input.Length];
-      Input = input.ToLower();
+      this.IsWord();
+      this.Arrayed();
+      this.SetInputArray();
+      this.AddScore();
+    }
+
+    public void Arrayed()
+    {
+      char[] arrayed = new char[Input.Length];
+      string toLower = Input.ToLower();
       InputArray = arrayed;
+      Input = toLower;
       WordScore = 0;
     }
 

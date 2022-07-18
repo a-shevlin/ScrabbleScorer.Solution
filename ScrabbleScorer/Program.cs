@@ -1,26 +1,20 @@
-using System;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
-namespace ScrabbleScorer 
+namespace ScrabbleScorer
 {
   public class Program
   {
-    public static void Main()
+    public static void Main(string[] args)
     {
-      Console.WriteLine("Scrabble Word Score Calculator");
-      Repeat();
-    }
-    public static void Repeat()
-    {
-      Console.WriteLine(" What is your word (Press Enter to exit)");
-      string inputText = Console.ReadLine();
-      Word newWord = new Word(inputText);
-      if (newWord.IsWord())
-      {
-      newWord.SetInputArray();
-      newWord.AddScore();
-      Console.WriteLine("The word " + newWord.Input + " scores " + newWord.WordScore + " points.");
-      Repeat();
-      }
+      var host = new WebHostBuilder()
+        .UseKestrel()
+        .UseContentRoot(Directory.GetCurrentDirectory())
+        .UseIISIntegration()
+        .UseStartup<Startup>()
+        .Build();
+
+      host.Run();
     }
   }
 }
